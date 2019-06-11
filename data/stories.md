@@ -25,3 +25,11 @@
 ## say goodbye
 * goodbye
   - utter_goodbye
+
+## ask temperature
+* ask_help
+  - utter_Help
+* ask_weather
+  - utter_Tell
+* deny
+  - utter_goodbye 

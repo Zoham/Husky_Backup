@@ -6,6 +6,15 @@
 - good evening
 - hey there
 
+
+## intent:ask_help
+- help
+- hep
+- guide
+- aid
+- assist
+- Can you help me
+
 ## intent:goodbye
 - bye
 - goodbye
@@ -48,3 +57,13 @@
 - not very good
 - extremely sad
 - so sad
+
+
+## intent:ask_weather
+- weather
+- rain
+- What is the weather
+- temperature
+- Can you tell me about the weather
+- How will be the weather today
+

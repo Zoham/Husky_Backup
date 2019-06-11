@@ -5,6 +5,8 @@ intents:
   - deny
   - mood_great
   - mood_unhappy
+  - ask_help
+  - ask_weather
 
 actions:
 - utter_greet
@@ -12,7 +14,8 @@ actions:
 - utter_did_that_help
 - utter_happy
 - utter_goodbye
-
+- utter_Help
+- utter_Tell 
 templates:
   utter_greet:
   - text: "Hey! How are you?"
@@ -29,3 +32,9 @@ templates:
 
   utter_goodbye:
   - text: "Bye"
+
+  utter_Help:
+  - text: "How can I help you"
+
+  utter_Tell:
+  - text: "Weather will be good"
