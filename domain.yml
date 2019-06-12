@@ -11,6 +11,7 @@ intents:
   - thank
   - bye
   - ask_whoisit
+  - Developers
 actions:
 - utter_greet
 - utter_cheer_up
@@ -21,6 +22,7 @@ actions:
 - utter_Tell 
 - utter_name
 - utter_cool
+- utter_developers
 
 templates:
   utter_greet:
@@ -50,3 +52,6 @@ templates:
 
   utter_cool:
   - text: "Cool!"
+
+  utter_developers:
+  - text: "I am an AI Chatbot, developed by:\n1.) Soham Kulkarni\n2.) Arooshi Verma\n3.) Hrishabh Yadav"

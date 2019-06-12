@@ -280,3 +280,10 @@
 - are you a bot?
 - who is this?
 - hi! what's your name?
+
+## intent:Developers
+- Who made you?
+- Who created you?
+- Who are your developers?
+- Who is your father
+- Who is your mother
