@@ -5,6 +5,7 @@ intents:
   - deny
   - mood_great
   - mood_unhappy
+  - features
 
 actions:
 - utter_greet
@@ -12,6 +13,7 @@ actions:
 - utter_did_that_help
 - utter_happy
 - utter_goodbye
+- utter_features
 
 templates:
   utter_greet:
@@ -29,3 +31,5 @@ templates:
 
   utter_goodbye:
   - text: "Bye"
+  utter_features:
+  - text: "I can help you with : \n Bus-Timings \n Faculty details \n Restaurants around the campus \n Events \n Class Time-Table \n Live scores"

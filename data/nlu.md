@@ -48,3 +48,11 @@
 - not very good
 - extremely sad
 - so sad
+
+## intent:features
+-features
+-work
+-characteristics
+-what can you do
+-how are you useful
+-will you help me
