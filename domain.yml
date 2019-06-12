@@ -7,7 +7,10 @@ intents:
   - mood_unhappy
   - ask_help
   - ask_weather
-
+  - explain
+  - thank
+  - bye
+  - ask_whoisit
 actions:
 - utter_greet
 - utter_cheer_up
@@ -16,6 +19,8 @@ actions:
 - utter_goodbye
 - utter_Help
 - utter_Tell 
+- utter_name
+- utter_cool
 
 templates:
   utter_greet:
@@ -32,10 +37,16 @@ templates:
   - text: "Great carry on!"
 
   utter_goodbye:
-  - text: "Bye"
+  - text: "Goodbye"
 
   utter_Help:
   - text: "How can I help you"
 
   utter_Tell:
   - text: "Weather will be good"
+
+  utter_name:
+  - text: "I am Husky\n I will be your assistant for today"
+
+  utter_cool:
+  - text: "Cool!"

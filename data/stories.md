@@ -14,8 +14,6 @@
   - utter_happy
 
 ## sad path 2
-* greet
-  - utter_greet
 * mood_unhappy
   - utter_cheer_up
   - utter_did_that_help
@@ -26,10 +24,25 @@
 * goodbye
   - utter_goodbye
 
-## ask temperature
+## ask_help
 * ask_help
   - utter_Help
+
+## ask temperature
 * ask_weather
   - utter_Tell
-* deny
-  - utter_goodbye 
+
+## thanks
+* thanks
+  - utter_cool
+
+## askname
+* ask_whoisit
+  - utter_name
+* thank
+  - utter_cool
+
+## bye
+* bye
+  - utter_goodbye
+
