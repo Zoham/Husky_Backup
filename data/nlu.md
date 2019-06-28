@@ -320,3 +320,20 @@
 - Are you fine
 - How have you been
 - Are you good
+
+## intent:send_email
+- I want to send an email
+- can you send an email for me
+- please open gmail
+- send mail
+- electronic mail
+- e mail
+- email
+- mail
+- e-mail
+- gmail
+- g-mail
+
+## intent: question_email
+- Why can't you send email directly
+- Can't we send mail from here

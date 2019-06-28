@@ -92,5 +92,11 @@ class Action_weather(Action):
 			dispatcher.utter_message(s)
 
 
-
+class open_email(Action):
+	def name(self):
+		return 'open_email'
+		
+	def run(self, dispatcher, tracker, domain):
+		import webbrowser
+		webbrowser.open_new("https://mail.google.com/mail/u/0/#inbox?compose=new")	
 

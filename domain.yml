@@ -29,8 +29,10 @@ actions:
 - utter_how_are_you
 - utter_developers
 - utter_north
+- utter_still_developing
 - Action_date
 - Action_weather
+- open_email
 
 templates:
   utter_greet:
@@ -72,3 +74,6 @@ templates:
 
   utter_how_are_you:
   - text: "How are you?"
+
+  utter_still_developing:
+  - text: "Soory, but I am still in the development phase. Hope to become pawsome soon! ;)"
