@@ -4,6 +4,11 @@
 * mood_great
   - utter_happy
 
+## greet2
+* greet2
+  - utter_good
+  - utter_how_are_you
+
 ## sad path 1
 * greet
   - utter_greet
@@ -30,7 +35,7 @@
 
 ## ask temperature
 * ask_weather
-  - utter_Tell
+  - Action_weather
 
 ## thanks
 * thanks
@@ -50,3 +55,12 @@
 * Developers
   - utter_developers
 
+## ask_day
+* date
+   - Action_date
+   
+## ask_day2
+* date
+   - Action_date
+* affirm
+  - utter_cool

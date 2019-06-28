@@ -2,7 +2,18 @@
 # https://rasa.com/docs/rasa/nlu/components/
 language: en
 
-pipeline: "pretrained_embeddings_spacy" # loads the spacy language model
+pipeline:
+- name: "SpacyNLP"
+- name: "SpacyTokenizer"
+- name: "SpacyFeaturizer"
+- name: "RegexFeaturizer"
+- name: "CRFEntityExtractor"
+- name: "EntitySynonymMapper"
+- name: "SklearnIntentClassifier"
+- name: "DucklingHTTPExtractor"
+  url: "http://localhost:8000"
+  dimensions: ["time", "number", "amount-of-money", "distance","day-of-week"]
+
 
 policies:
   - name: MemoizationPolicy

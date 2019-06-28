@@ -12,6 +12,9 @@ intents:
   - bye
   - ask_whoisit
   - Developers
+  - location
+  - date
+  
 actions:
 - utter_greet
 - utter_cheer_up
@@ -22,7 +25,12 @@ actions:
 - utter_Tell 
 - utter_name
 - utter_cool
+- utter_good
+- utter_how_are_you
 - utter_developers
+- utter_north
+- Action_date
+- Action_weather
 
 templates:
   utter_greet:
@@ -36,7 +44,7 @@ templates:
   - text: "Did that help you?"
 
   utter_happy:
-  - text: "Great carry on!"
+  - text: "Nice to know!\nHow can I assist you?"
 
   utter_goodbye:
   - text: "Goodbye"
@@ -48,10 +56,19 @@ templates:
   - text: "Weather will be good"
 
   utter_name:
-  - text: "I am Husky\n I will be your assistant for today"
+  - text: "I am Husky\nI will be your assistant for today"
 
   utter_cool:
   - text: "Cool!"
 
   utter_developers:
   - text: "I am an AI Chatbot, developed by:\n1.) Soham Kulkarni\n2.) Arooshi Verma\n3.) Hrishabh Yadav"
+
+  utter_north:
+  - text: "North India"
+
+  utter_good:
+  - text: "Somewhere between good and being better!"
+
+  utter_how_are_you:
+  - text: "How are you?"

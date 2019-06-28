@@ -187,6 +187,9 @@
 - Tell me about the weather today?
 - Is weather outside good?
 - Is it raining outside
+- Will it rain tomorrow?
+- What will be weather on sunday
+- Is it stormy today
 
 
 ## intent:explain
@@ -287,3 +290,33 @@
 - Who are your developers?
 - Who is your father
 - Who is your mother
+
+## intent: date
+- What day is today
+- What is the date of tomorrow
+- What  date is next monday
+- When is next thrusday
+- When is saturday
+- What date is today
+- next wednesday
+- when will sunday come
+- When is next sunday
+
+
+## synonym: Monday
+- Sunday
+- Tuesday
+- Wednesday
+- Saturday
+- Thrusday
+- Friday
+
+## intent: greet2
+- how are you
+- sup
+- Whatsupp
+- wassup
+- How you doing
+- Are you fine
+- How have you been
+- Are you good
