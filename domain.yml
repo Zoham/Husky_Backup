@@ -5,13 +5,34 @@ intents:
   - deny
   - mood_great
   - mood_unhappy
-
+  - ask_help
+  - ask_weather
+  - explain
+  - thank
+  - bye
+  - ask_whoisit
+  - Developers
+  - location
+  - date
+  
 actions:
 - utter_greet
 - utter_cheer_up
 - utter_did_that_help
 - utter_happy
 - utter_goodbye
+- utter_Help
+- utter_Tell 
+- utter_name
+- utter_cool
+- utter_good
+- utter_how_are_you
+- utter_developers
+- utter_north
+- utter_still_developing
+- Action_date
+- Action_weather
+- open_email
 
 templates:
   utter_greet:
@@ -25,7 +46,34 @@ templates:
   - text: "Did that help you?"
 
   utter_happy:
-  - text: "Great carry on!"
+  - text: "Nice to know!\nHow can I assist you?"
 
   utter_goodbye:
-  - text: "Bye"
+  - text: "Goodbye"
+
+  utter_Help:
+  - text: "How can I help you"
+
+  utter_Tell:
+  - text: "Weather will be good"
+
+  utter_name:
+  - text: "I am Husky\nI will be your assistant for today"
+
+  utter_cool:
+  - text: "Cool!"
+
+  utter_developers:
+  - text: "I am an AI Chatbot, developed by:\n1.) Soham Kulkarni\n2.) Arooshi Verma\n3.) Hrishabh Yadav"
+
+  utter_north:
+  - text: "North India"
+
+  utter_good:
+  - text: "Somewhere between good and being better!"
+
+  utter_how_are_you:
+  - text: "How are you?"
+
+  utter_still_developing:
+  - text: "Soory, but I am still in the development phase. Hope to become pawsome soon! ;)"
