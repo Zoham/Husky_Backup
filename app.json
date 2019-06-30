@@ -1,0 +1,6 @@
+{
+  "name": "Husky",
+  "description": "Husky, the Chatbot.",
+  "repository": "https://github.com/Zoham/Husky",
+  "keywords": ["flask", "heroku"]
+}
