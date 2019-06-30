@@ -3,7 +3,6 @@ html, body {
     margin: 0;
 }
 
-.footer {
-    height: 50px;
-    margin-top: -50px;
+.messageInput {
+    width: 100%;
 }
