@@ -14,6 +14,10 @@ intents:
   - Developers
   - location
   - date
+  - greet2
+  - send_email
+  - question_email
+  - tutorial
   
 actions:
 - utter_greet
@@ -30,6 +34,7 @@ actions:
 - utter_developers
 - utter_north
 - utter_still_developing
+- utter_tutorial
 - Action_date
 - Action_weather
 - open_email
@@ -76,4 +81,31 @@ templates:
   - text: "How are you?"
 
   utter_still_developing:
-  - text: "Soory, but I am still in the development phase. Hope to become pawsome soon! ;)"
+  - text: "Sorry, but I am still in the development phase. Hope to become pawsome soon! ;)"
+
+  utter_tutorial:
+  - text: "Who is Husky? \n
+  Husky is your very own smart digital doggo with whom
+  you can converse about anything related to IIT Bhubaneswar
+  and beyond.  \n
+  (Well almost ;P)  \n
+  Plus being the hardworking dog he is, you can also make him
+  send emails for you , update you with live scores etc. \n  \n
+
+  What all can he tell you about? \n
+  - Details about professors of IIT Bbsr  \n
+  - Class timetable  \n
+  - IITBBS transport schedule  \n
+  - upcoming events in the campus  \n
+  - Live scores  \n
+  - Best places around the campus \n
+  - Weather \n \n
+
+  What all can he do for you? \n
+  - Send emails \n \n
+
+  How to talk to him? \n
+  Just ask him a question like- How is the weather today? or
+  maybe ask him to send an email- I want to mail someone.
+  You can also have a small chitchat with him when you are sad,
+  just tell him what you feel."

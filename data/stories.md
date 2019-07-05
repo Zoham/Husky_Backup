@@ -70,7 +70,6 @@
   - open_email
   - utter_did_that_help
 
-
 ## email_open2
 * send_email
   - open_email
@@ -78,15 +77,32 @@
 * affirm
   - utter_cool
 
-
-## email_open1
+## email_open3
 * send_email
   - open_email
   - utter_did_that_help
 * deny
   - utter_still_developing
 
-## email_open2
+## email_question
 * question_email
   - utter_still_developing   
 
+## give_tutorial1
+* tutorial
+  - utter_tutorial
+  - utter_did_that_help
+* affirm
+  - utter_cool
+
+## give_tutorial2
+* tutorial
+  - utter_tutorial
+  - utter_did_that_help
+* deny
+  - utter_still_developing
+
+## give_tutorial3
+* tutorial
+  - utter_tutorial
+  - utter_did_that_help
