@@ -15,11 +15,10 @@ def response():
     global thread
     message = request.form.get("message")
     thread.append(message)
-    index()
 
     reply = husky(message)
     thread.append(reply)
-    return index()
+    return render_template("husky.html", thread=thread)
 
 if __name__ == "__main__":
     app.run()
