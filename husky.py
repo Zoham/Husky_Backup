@@ -3,15 +3,21 @@ from flask import *
 
 app = Flask(__name__, template_folder='husky_web_ui')
 
+thread = ["Hey", "Hi !", "How is the weather today?", "You might need an umbrella today."]
+
 @app.route('/')
 def index():
-    return render_template("husky.html")
+    return render_template("husky.html", thread=thread)
 
 @app.route('/response', methods=['POST'])
 def response():
     message = request.form.get("message")
+    thread.append(message)
+    index()
+
     reply = husky(message)
-    return render_template("husky.html", reply=reply)
+    thread.append(message)
+    return index()
 
 if __name__ == "__main__":
     app.run()

@@ -23,10 +23,10 @@
     </form>
 </div>
 
-
-{% if reply %}
-<h1>{{reply}}</h1>
+<ul>
+{% for message in thread.items() %}
+<li style="background-color: light-blue;">{{message}}</li>
 {% endif %}
-
+<ul>
 
 </body>
