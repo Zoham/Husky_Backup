@@ -3,11 +3,11 @@ from flask import *
 
 app = Flask(__name__, template_folder='husky_web_ui')
 
-thread = ["Hey", "Hi !", "How is the weather today?", "You might need an umbrella today."]
+thread = {"Hey", "Hi !", "How is the weather today?", "You might need an umbrella today."}
 
 @app.route('/')
 def index():
-    return render_template("husky.html", thread=thread)
+    return render_template("husky.html")
 
 @app.route('/response', methods=['POST'])
 def response():
