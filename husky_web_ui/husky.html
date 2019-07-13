@@ -23,8 +23,13 @@
     </form>
   </div>
 
-  {% if reply %}
-  <h1>{{reply}}</h1>
-  {% endif %}
+  <div class="container" style="position: fixed; top: 0.5%; width: 100%;
+  margin: 1%; background-color: lightblue">
+    {% for message in thread %}
+    <li>{{reply}}</li>
+    {% endfor %}
+  </div>
+
+
 
 </body>
