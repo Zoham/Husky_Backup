@@ -2,33 +2,31 @@
 <title>Husky</title>
 
 <head>
-  <link type="text/css" rel="stylesheet" href="style.css">
+    <link type="text/css" rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <div class="container" style="position: fixed; bottom: 0.5%; width: 100%">
+<div class="container" style="position: fixed; bottom: 0.5%; width: 100%">
     <form action="/response" method="POST">
-      <div class="container"
-           style="float:left; width: 88%; margin: 1%;">
+        <div class="container"
+             style="float:left; width: 88%; margin: 1%;">
         <textarea class="scrollable" name="message"
                   style="width: 100%; resize: none; "
         ></textarea>
-      </div>
-      <div class="container"
-           style="float:right; width: 8%; margin: 1%;">
-        <input type="submit" value="Bow"
-               style="width=100%; height:100%;"/>
-      </div>
+        </div>
+        <div class="container"
+             style="float:right; width: 8%; margin: 1%;">
+            <input type="submit" value="Bow"
+                   style="width=100%; height:100%;"/>
+        </div>
     </form>
-  </div>
+</div>
 
 
-    {% for message in thread %}
-    <li>{{reply}}</li>
-    {% endfor %}
-
-
+{% if reply %}
+<h1>{{reply}}</h1>
+{% endif %}
 
 
 </body>
