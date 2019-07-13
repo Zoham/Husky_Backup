@@ -7,16 +7,18 @@ thread = {"Hey", "Hi !", "How is the weather today?", "You might need an umbrell
 
 @app.route('/')
 def index():
-    return render_template("husky.html")
+    global thread
+    return render_template("husky.html", thread=thread)
 
 @app.route('/response', methods=['POST'])
 def response():
+    global thread
     message = request.form.get("message")
     thread.append(message)
     index()
 
     reply = husky(message)
-    thread.append(message)
+    thread.append(reply)
     return index()
 
 if __name__ == "__main__":
