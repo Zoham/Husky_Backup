@@ -1,2 +1,0 @@
-model_checkpoint_path: "F:\\coder\\Django-Rasa-Bot\\rasachat\\models\\current\\nlu\\intent_classifier_tensorflow_embedding.ckpt"
-all_model_checkpoint_paths: "F:\\coder\\Django-Rasa-Bot\\rasachat\\models\\current\\nlu\\intent_classifier_tensorflow_embedding.ckpt"

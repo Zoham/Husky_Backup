@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 
-from decouple import config
 
 # from rasa_core.agent import Agent
 # from rasa_core.channels.socketio import SocketIOInput
@@ -21,12 +20,11 @@ from decouple import config
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
+SECRET_KEY = 'g&a%t-vp1#uq9x3ep*vnn7^s_5#g3h&ee&1@*nile#k@a6o7g^'
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config("PROJECT_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
