@@ -100,3 +100,120 @@ class open_email(Action):
 		import webbrowser
 		webbrowser.open_new("https://mail.google.com/mail/u/0/#inbox?compose=new")	
 
+class tell_bustimetable(Action):
+	def name(self):
+		return 'tell_bustimetable'
+
+	def func(trow,tcol,xl,stoplist,place,transport_type="Buses"):
+		print(transport_type+"\n")
+		trow=trow+2
+		t = xl[xl.columns[tcol]][trow].strip() #time
+		#print(t)
+		temp_check=0 
+		temp_check2=0 #to check if we need to u/p none
+		while((t not in stoplist) and ((t.lower() in place) or t[0].isdigit())):
+			#print(t)
+			t=t.lower()
+			if(t in place):
+				utter_message(t.upper())
+				temp_check = 0;         
+				#print("xxxxyyyy")
+			else:
+				if(t[-2:] == 'pm' and int(t[:-6])!=12):
+					t = str(int(t[:-6]) + 12) + t[-6:]
+				#print(t)
+				time_para[3] = int(t[:-6])
+				time_para[4] = int(t[-5:-3])
+				dt_obj = date.datetime(*time_para[0:6])
+				#print(t)
+				if( dt_obj >= time_input):
+					temp_check=1
+					s = xl[xl.columns[tcol]][trow] + " : " + xl[xl.columns[tcol+1]][trow]
+					utter_message(s)
+			trow = trow + 1
+			#print(trow)
+			t = xl[xl.columns[tcol]][trow].strip()
+			#print(t in place)
+			if((t.lower() in place) and temp_check == 0):
+				utter_message("none")
+		if(temp_check == 0):
+				utter_message("none")
+	def func2(trow,tcol,xl,stoplist,place,transport_type="Buses"):
+		utter_message(transport_type+"\n")
+		trow=trow+1
+		t = xl[xl.columns[tcol]][trow].strip() #time
+		#print(t)
+		temp_check=0 
+		temp_check2=0 #to check if we need to u/p none
+		while((t not in stoplist) and ((t.lower() == "time") or t[0].isdigit())):
+			#print(t)
+			t=t.lower()
+			if(t == "time"):
+				utter_message(xl[xl.columns[tcol+1]][trow].strip().upper())
+				temp_check = 0;         
+				#print("xxxxyyyy")
+			else:
+				if(t[-2:] == 'pm' and int(t[:-6])!=12):
+					t = str(int(t[:-6]) + 12) + t[-6:]
+				#print(t)
+				time_para[3] = int(t[:-6])
+				time_para[4] = int(t[-5:-3])
+				dt_obj = date.datetime(*time_para[0:6])
+				#print(t)
+				if( dt_obj >= time_input):
+					temp_check=1
+					s = xl[xl.columns[tcol]][trow] + " : " + xl[xl.columns[tcol+1]][trow]
+					utter_message(s)
+			trow = trow + 1
+			#print(trow)
+			t = xl[xl.columns[tcol]][trow].strip()
+			#print(t in place)
+			if((t.lower() == "time") and temp_check == 0):
+				utter_message("none")
+		if(temp_check == 0):
+				utter_message("none")
+
+	def run(self, dispatcher, tracker, domain):
+		import pandas as pd
+		import datetime as date
+		import calendar
+
+		#inputs
+		dt_obj = datetime(*time_tuple[0:6])
+		time_input=date.datetime.now()
+
+		xl = pd.read_excel(r'transport.xlsx')
+		stoplist = ['Bus Supervisor (Mangu): 9439432305', 'BUS SCHEDULE ON WORKING DAYS', 'BUS SCHEDULE  ON SATURDAY/SUNDAY/HOLIDAYS', 'BUS SCHEDULE ON WORKING DAYS', 'TRAVELER SCHEDULE ON SATURDAY', 'TRAVELER SCHEDULE ON SUNDAY/HOLIDAY', 'Abbreviations:']
+		working_days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday']
+		place = ['bhubaneswar-argul', 'argul-niser/bhubaneswar', 'argul-bhubaneswar']
+		holiday = [(12,8), (15,8), (2,9), (10,9), (2,10), (7,10), (8,10), (27,10), (10,11), (12,11), (25,12)] #list of holidays in 2019. Each pair: (date,month)
+
+		if(day_input == 'today'):
+			day = (date.datetime.today().strftime("%A")).lower()
+			time_para = list(date.datetime.now().timetuple())
+		elif(day_input == 'tomorrow'):
+			day = calendar.day_name[(date.datetime.today() + date.timedelta(days=1)).weekday()]
+			time_para = list((date.datetime.today() + date.timedelta(days=1)).timetuple())
+		if((time_para[2], time_para[1]) in holiday):
+			day = "sunday"
+
+		if(day in working_days):
+			trow,tcol=[(xl[col][xl[col].eq('BUS SCHEDULE ON WORKING DAYS')].index[i], xl.columns.get_loc(col)) for col in xl.columns for i in range(0,len(xl[col][xl[col].eq('BUS SCHEDULE ON WORKING DAYS')].index))][0]
+			func(trow,tcol,xl,stoplist,place,"Buses")
+					utter_message("\n")
+			trow,tcol=[(xl[col][xl[col].eq('TRAVELER SCHEDULE ON WORKING DAYS')].index[i], xl.columns.get_loc(col)) for col in xl.columns for i in range(0,len(xl[col][xl[col].eq('TRAVELER SCHEDULE ON WORKING DAYS')].index))][0]
+			func(trow,tcol,xl,stoplist,place,"Traveler")
+		elif(day == "saturday" or day == "sunday"):
+			trow,tcol=[(xl[col][xl[col].eq('BUS SCHEDULE  ON SATURDAY/SUNDAY/HOLIDAYS')].index[i], xl.columns.get_loc(col)) for col in xl.columns for i in range(0,len(xl[col][xl[col].eq('BUS SCHEDULE  ON SATURDAY/SUNDAY/HOLIDAYS')].index))][0]
+			func(trow,tcol,xl,stoplist,place,"Buses")
+			utter_message("\n")
+		if(day == "saturday"):
+			trow,tcol=[(xl[col][xl[col].eq('TRAVELER SCHEDULE ON SATURDAY')].index[i], xl.columns.get_loc(col)) for col in xl.columns for i in range(0,len(xl[col][xl[col].eq('TRAVELER SCHEDULE ON SATURDAY')].index))][0]
+			func2(trow,tcol,xl,stoplist,place,"Traveler")
+			utter_message("\n")
+		elif(day == "sunday"):
+					trow,tcol=[(xl[col][xl[col].eq('TRAVELER SCHEDULE ON SUNDAY/HOLIDAY')].index[i], xl.columns.get_loc(col)) for col in xl.columns for i in range(0,len(xl[col][xl[col].eq('TRAVELER SCHEDULE ON SUNDAY/HOLIDAY')].index))][0]
+			func2(trow,tcol,xl,stoplist,place,"Traveler")
+			utter_message("\n")
+
+

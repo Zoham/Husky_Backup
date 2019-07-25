@@ -33,6 +33,7 @@ actions:
 - Action_date
 - Action_weather
 - open_email
+- tell_bustimetable
 
 templates:
   utter_greet:
