@@ -291,7 +291,7 @@
 - Who is your father
 - Who is your mother
 
-## intent: date
+## intent:date
 - What day is today
 - What is the date of tomorrow
 - What  date is next monday
@@ -303,7 +303,7 @@
 - When is next sunday
 
 
-## synonym: Monday
+## synonym:Monday
 - Sunday
 - Tuesday
 - Wednesday
@@ -311,7 +311,7 @@
 - Thrusday
 - Friday
 
-## intent: greet2
+## intent:greet2
 - how are you
 - sup
 - Whatsupp
@@ -334,6 +334,47 @@
 - gmail
 - g-mail
 
-## intent: question_email
+## intent:question_email
 - Why can't you send email directly
 - Can't we send mail from here
+
+## intent:ask_score
+- Hey tell about cricket score
+- what is the score
+- How is the score
+- Tell score
+- Score
+- What is happening in cricket match
+- tell me about score
+- What is score
+
+
+## intent:number_choices 
+- One
+- Two
+- My choice is two
+- Select twotwo
+- I wanna select
+- Tell me about match three
+- My chocie is 4
+
+## synonym:One
+- Two
+- Three
+- Four
+- Five
+- Fifteen
+- Six
+- Seven
+- 1
+- 2
+- 3
+- 4
+- 5
+- 6
+- 7
+- 8
+- 10
+- 11
+
+

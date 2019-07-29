@@ -14,6 +14,8 @@ intents:
   - Developers
   - location
   - date
+  - ask_score
+  - number_choices
   
 actions:
 - utter_greet
@@ -33,6 +35,8 @@ actions:
 - Action_date
 - Action_weather
 - open_email
+- cricket_score_choices
+- cricket_score_info
 
 templates:
   utter_greet:
@@ -76,4 +80,4 @@ templates:
   - text: "How are you?"
 
   utter_still_developing:
-  - text: "Soory, but I am still in the development phase. Hope to become pawsome soon! ;)"
+  - text: "Sorry, but I am still in the development phase. Hope to become pawsome soon! ;)"

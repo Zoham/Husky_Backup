@@ -40,7 +40,6 @@ class Action_weather(Action):
 		doc = lh.fromstring(page.content)
 		tr_elements = doc.xpath('//tr')
 		today  = date.today()
-		print(today)
 		message = tracker.latest_message
 		time  = eval(str(tracker.latest_message['entities'][0]))['value']
 		if isinstance(time, str):
@@ -50,7 +49,6 @@ class Action_weather(Action):
 		data = datetime.date(int(time[0:4]),int(time[5:7]),int(time[8:]))
 		difference = data - today
 		difference = difference.days
-		print(difference)
 		row_no = 0
 		x = 0
 		col =[]
@@ -83,7 +81,6 @@ class Action_weather(Action):
 						col.append(name)
 						#dispatcher.utter_message(name)
 				row_no += 1
-			print(col)
 			s = s +"\n-> Weather: "+str(col[2])+"\n-> Temperature: " + str(col[3][:2]+"/"+col[3][2:])+"Celsius\n-> Precipitation: "+str(col[4]) + "\n-> Wind Speed: "+ str(col[5]) + "\n-> Humidity: " + str(col[6])
 			dispatcher.utter_message(s)
 			s = ""
@@ -100,3 +97,59 @@ class open_email(Action):
 		import webbrowser
 		webbrowser.open_new("https://mail.google.com/mail/u/0/#inbox?compose=new")	
 
+
+class cricket_score_choices(Action):
+	def name(self):
+		return 'cricket_score_choices'
+
+	def run(self, dispatcher, tracker, domain):
+		import requests
+		from bs4 import BeautifulSoup
+		from time import sleep
+		import sys
+		dispatcher.utter_message('Live Cricket Matches:')
+		dispatcher.utter_message('=====================')
+		url = "http://static.cricinfo.com/rss/livescores.xml"
+		r = requests.get(url)
+		soup = BeautifulSoup(r.text,'lxml')
+		i = 1
+		for item in soup.findAll('item'):
+			dispatcher.utter_message(str(i) + '. ' + item.find('description').text)
+			i = i + 1
+		links = []    
+		for link in soup.findAll('item'):
+			links.append(link.find('guid').text)
+
+class cricket_score_info(Action):
+	def name(self):
+		return 'cricket_score_info'
+	def run(self, dispatcher, tracker, domain):
+		import requests
+		from bs4 import BeautifulSoup
+		from time import sleep
+		import sys
+		import requests
+		from bs4 import BeautifulSoup
+		from time import sleep
+		import sys
+		url = "http://static.cricinfo.com/rss/livescores.xml"
+		r = requests.get(url)
+		soup = BeautifulSoup(r.text,'lxml')
+		i = 1
+		links = []    
+		for link in soup.findAll('item'):
+			links.append(link.find('guid').text)
+		userInput = eval(str(tracker.latest_message['entities'][0]))['value']
+		print(eval(str(tracker.latest_message['entities'][0]))['value'])
+		url = links[userInput - 1]
+		r = requests.get(url)
+		soup = BeautifulSoup(r.text,'lxml')  
+		matchUrl = links[userInput - 1]
+		r = requests.get(matchUrl)
+		soup = BeautifulSoup(r.text,'lxml') 
+		score = soup.findAll('title')       
+		try:
+			r.raise_for_status()
+		except Exception as exc:
+			dispatcher.utter_message('Connection Failure. Try again!')
+		dispatcher.utter_message(score[0].text + '\n')
