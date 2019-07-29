@@ -88,7 +88,7 @@
 
 ## email_open2
 * question_email
-  - utter_still_developing   
+  - utter_still_developing
 
 ## cricket score
 * ask_score
@@ -99,3 +99,21 @@
 ## in_between
 * number_choices
   - cricket_score_info
+## give_tutorial1
+* tutorial
+  - utter_tutorial
+  - utter_did_that_help
+* affirm
+  - utter_cool
+
+## give_tutorial2
+* tutorial
+  - utter_tutorial
+  - utter_did_that_help
+* deny
+  - utter_still_developing
+
+## give_tutorial3
+* tutorial
+  - utter_tutorial
+  - utter_did_that_help

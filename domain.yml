@@ -16,7 +16,11 @@ intents:
   - date
   - ask_score
   - number_choices
-  
+  - greet2
+  - send_email
+  - question_email
+  - tutorial
+
 actions:
 - utter_greet
 - utter_cheer_up

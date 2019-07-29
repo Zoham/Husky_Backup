@@ -348,7 +348,6 @@
 - tell me about score
 - What is score
 
-
 ## intent:number_choices 
 - One
 - Two
@@ -357,6 +356,16 @@
 - I wanna select
 - Tell me about match three
 - My chocie is 4
+
+## intent: tutorial
+- How to use you
+- give me a tutorial
+- tutorial
+- teach me how to use husky
+- how to talk
+- in what way to converse with you
+- how to ask you questions
+- how does husky talk
 
 ## synonym:One
 - Two
