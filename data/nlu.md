@@ -338,6 +338,16 @@
 - Why can't you send email directly
 - Can't we send mail from here
 
+## intent: tutorial
+- How to use you
+- give me a tutorial
+- tutorial
+- teach me how to use husky
+- how to talk
+- in what way to converse with you
+- how to ask you questions
+- how does husky talk
+
 ## intent:ask_score
 - Hey tell about cricket score
 - what is the score
@@ -357,16 +367,6 @@
 - Tell me about match three
 - My chocie is 4
 
-## intent: tutorial
-- How to use you
-- give me a tutorial
-- tutorial
-- teach me how to use husky
-- how to talk
-- in what way to converse with you
-- how to ask you questions
-- how does husky talk
-
 ## synonym:One
 - Two
 - Three
@@ -385,5 +385,4 @@
 - 8
 - 10
 - 11
-
 

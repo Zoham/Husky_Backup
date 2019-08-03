@@ -79,14 +79,14 @@
   - utter_cool
 
 
-## email_open1
+## email_open3
 * send_email
   - open_email
   - utter_did_that_help
 * deny
   - utter_still_developing
 
-## email_open2
+## email_question
 * question_email
   - utter_still_developing
 
@@ -99,7 +99,7 @@
 ## in_between
 * number_choices
   - cricket_score_info
-
+  
 ## give_tutorial1
 * tutorial
   - utter_tutorial
