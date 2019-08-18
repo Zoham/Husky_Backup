@@ -18,6 +18,8 @@ intents:
   - send_email
   - question_email
   - tutorial
+  - ask_score
+  - number_choices
 
 actions:
 - utter_greet
@@ -37,6 +39,9 @@ actions:
 - Action_date
 - Action_weather
 - open_email
+- cricket_score_choices
+- cricket_score_info
+- utter_tutorial
 
 templates:
   utter_greet:
@@ -80,8 +85,8 @@ templates:
   - text: "How are you?"
 
   utter_still_developing:
-  - text: "Soory, but I am still in the development phase. Hope to become pawsome soon! ;)"
-
+  - text: "Sorry, but I am still in the development phase. Hope to become pawsome soon! ;)"
+  
   utter_tutorial:
   - text: "Who is Husky? \n
   Husky is your very own smart digital doggo with whom
@@ -103,5 +108,6 @@ templates:
   How to talk to him? \n
   Just ask him a question like- How is the weather today? or
   maybe ask him to send an email- I want to mail someone.
-  You can also have a small chitchat with him when you are sad,
+  You can also have a small chitchat with him when you are sad
   just tell him what you feel."
+  
